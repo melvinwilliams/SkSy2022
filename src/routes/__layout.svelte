@@ -24,7 +24,7 @@
       <ul class="navbar-nav flex-column">
         {#each pages as [path, label, icon]}
           <li class="nav-item">
-            <a class="nav-link" href={path} target="content"><i
+            <a class="nav-link" sveltekit:prefetch href={path}><i
               class="bi bi-{icon} ms-2"></i> <span
               class="d-inline d-sm-none d-md-inline">{label}</span></a>
           </li>
