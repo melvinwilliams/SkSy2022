@@ -1,3 +1,11 @@
+<script>
+  let pages = [
+    ["/", "Home", "house"],
+    ["/create", "Erstellen", "plus-square"],
+    ["/imprint", "Impressum", "info-circle"],
+  ]
+</script>
+
 <div class="d-flex flex-column flex-sm-row h-100">
   <nav
     class="h-sm-100 col-auto navbar-expand-sm navbar-dark border-secondary">
@@ -14,9 +22,9 @@
       <h1 style="margin-left: 6px" class="navbar-brand d-none d-lg-block">ToDo App</h1>
 
       <ul class="navbar-nav flex-column">
-        {#each [["", "Home", "house"], ["create", "Erstellen", "plus-square"], ["imprint", "Impressum", "info-circle"]] as [path, label, icon]}
+        {#each pages as [path, label, icon]}
           <li class="nav-item">
-            <a class="nav-link" href={`/${path}`} target="content"><i
+            <a class="nav-link" href={path} target="content"><i
               class="bi bi-{icon} ms-2"></i> <span
               class="d-inline d-sm-none d-md-inline">{label}</span></a>
           </li>
