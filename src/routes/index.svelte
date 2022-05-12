@@ -1,3 +1,9 @@
+<svelte:head>
+  <title>Home</title>
+  <meta name="description" content="Übersichtsseite" />
+</svelte:head>
+
+
 <h1 class="display-4">Home</h1>
 
 <table class="table text-white">

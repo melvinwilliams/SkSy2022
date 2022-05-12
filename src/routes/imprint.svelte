@@ -1,3 +1,9 @@
+<svelte:head>
+  <title>Impressum</title>
+  <meta name="description" content="Impressum der ToDo App" />
+</svelte:head>
+
+
 <h1 class="display-4">Impressum</h1>
 
 <h2 class="text-muted">Autoren</h2>
