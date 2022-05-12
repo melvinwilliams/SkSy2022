@@ -13,6 +13,11 @@ const config = {
   kit: {
     adapter: adapter(),
     inlineStyleThreshold: 16_384,
+    paths: {
+      base: process.env.BASE_HREF || "",
+    },
+    // For GitHub Pages
+    appDir: "internal",
     trailingSlash: "always",
     prerender: {
       default: true,

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "svelte-kit build",
+    "build:gh-pages": "cross-env BASE_HREF=/fen-viewer svelte-kit build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "svelte-kit dev",
