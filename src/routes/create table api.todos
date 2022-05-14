@@ -1,0 +1,9 @@
+create table api.todos (
+  id serial primary key,
+  task text not null,
+  due date not null,
+  percent int not null
+);
+
+insert into api.todos (task,due,percent) values
+  ('finish tutorial 0','2022.05.30','0'), ('pat self on back','2022.05.30','0');

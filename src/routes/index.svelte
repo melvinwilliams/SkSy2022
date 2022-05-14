@@ -1,11 +1,25 @@
+<script context="module">
+  export async function load({fetch}){
+    const res = await fetch('http://localhost:3000/todos')
+    const todos = await res.json();
+
+    if(res.ok){
+      return {
+        props: {
+          todos
+        }
+      }
+    }
+
+  return {
+    status: res.status,
+    error: new Error('Could not fetch the ToDos')
+  }
+}
+</script>
+
 <script>
-  let entries = [
-    {title: "Übersichtsseite erstellen", deadline: "2022-05-09", progress: 30},
-    {title: "Create Seite erstellen", deadline: "2022-05-09", progress: 30},
-    {title: "Edit Seite erstellen", deadline: "2022-05-10", progress: 40},
-    {title: "Impressum erstellen", deadline: "2022-05-09", progress: 0},
-    {title: "Code im Repository hochladen", deadline: "2022-05-09", progress: 100},
-  ].sort((a, b) => a.deadline > b.deadline ? 1 : -1);
+  export let todos
 </script>
 
 <svelte:head>
@@ -26,17 +40,17 @@
     <th scope="col" class="text-break d-none d-sm-table-cell">Aktion</th>
   </tr>
   </thead>
-  {#each entries as {title, deadline, progress}, index}
+  {#each todos as {task, due, percent}, index}
     <tr>
       <th scope="row" class="col-auto d-none d-sm-table-cell">{index + 1}</th>
       <td class="text-break">
-        {title}
+        {task}
       </td>
       <td class="col-auto">
-        <time datetime={deadline}>{new Date(deadline).toLocaleDateString()}</time>
+        <time datetime={due}>{new Date(due).toLocaleDateString()}</time>
       </td>
       <td class="col-auto">
-        {progress}%
+        {percent}%
       </td>
       <td class="col-auto">
         <div class="btn-group-vertical d-inline-flex d-sm-none" role="group">
