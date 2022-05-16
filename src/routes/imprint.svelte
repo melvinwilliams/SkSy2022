@@ -1,7 +1,6 @@
 <script>
   let authors = [
     {name: "Thea Alexandra Schöbl"},
-    {name: "Melvin Ethelbert Williams"},
     {name: "Niklas Leonard Sumalvico"},
   ]
 </script>

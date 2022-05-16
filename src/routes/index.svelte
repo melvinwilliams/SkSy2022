@@ -40,7 +40,7 @@
     <th scope="col" class="text-break d-none d-sm-table-cell">Aktion</th>
   </tr>
   </thead>
-  {#each todos as {task, due, percent}, index}
+  {#each todos as {id,task, due, percent}, index}
     <tr>
       <th scope="row" class="col-auto d-none d-sm-table-cell">{index + 1}</th>
       <td class="text-break">
