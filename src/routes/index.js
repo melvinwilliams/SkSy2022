@@ -1,29 +1,15 @@
-import clientPromise from '../lib/mongo';
+import clientPromise from '../../lib/mongodb-client'
 
-export async function post ({request}) {
- const dbConnection = await clientPromise;
- const db = dbConnection.db();
- const collection = db.collection('todoapp');
- let apothegm = await request.json();
- const dbApothegm = await collection.insertOne(apothegm);
- return { status: 200, body: { dbApothegm } }
-}
-
-export async function get(request){
+export async function post (request) {
+    const dbConnection = await clientPromise;
+    const db = dbConnection.db();
+    const collection = db.collection('sveltekit-todos');
+    const todo = JSON.parse(request.body);
+    const newTodo = await collection.insertOne(todo);
     return {
         status: 200,
         body: {
-            todo: 'Todo'
+            newTodo
         }
     }
 }
-
-export async function put(request){
-
-}
-
-export async function del(request){
-
-}
-
-
