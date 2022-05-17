@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const dataSchema = new mongoose.Schema({
-    text: {
+const TodoSchema = new mongoose.Schema({
+    title: {
         required: true,
         type: String
     },
@@ -16,4 +16,4 @@ const dataSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Data', dataSchema)
+export const Todo = mongoose.model('Data', TodoSchema)

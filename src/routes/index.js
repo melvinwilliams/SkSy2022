@@ -1,15 +1,30 @@
-import clientPromise from '../../lib/mongodb-client'
+import {Todo} from "../lib/models/model.js"
 
-export async function post (request) {
-    const dbConnection = await clientPromise;
-    const db = dbConnection.db();
-    const collection = db.collection('sveltekit-todos');
-    const todo = JSON.parse(request.body);
-    const newTodo = await collection.insertOne(todo);
+/** @type {import('./index').RequestHandler} */
+export async function get() {
+  const todos = await Todo.find()
+
+  return {
+    body: {
+      todos: todos || []
+    },
+  }
+}
+
+/** @type {import('./index').RequestHandler} */
+export async function post({request}) {
+  const form = await request.formData()
+
+  const element = await Todo.findByIdAndDelete(form.get("delete"))
+
+  if (element) {
     return {
-        status: 200,
-        body: {
-            newTodo
-        }
+      headers: {location: '/'},
+      status: 302,
     }
+  }
+
+  return {
+    status: 401,
+  }
 }

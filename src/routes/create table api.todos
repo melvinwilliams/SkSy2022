@@ -1,6 +1,0 @@
-create table api.todos (
-  id serial primary key,
-  task text not null,
-  due date not null,
-  percent int not null
-);

@@ -17,7 +17,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "next",
+    "@sveltejs/adapter-node": "next",
     "@sveltejs/kit": "next",
     "cross-env": "^7.0.3",
     "eslint": "^8.12.0",
@@ -33,8 +33,6 @@
   },
   "type": "module",
   "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "mongodb": "^4.6.0"
+    "mongoose": "^6.3.3"
   }
 }

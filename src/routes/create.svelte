@@ -9,4 +9,6 @@
 
 <h1 class="display-4">Erstellen</h1>
 
-<CreateForm submitLabel="Erstellen" />
+<form method="post">
+  <CreateForm submitLabel="Erstellen" />
+</form>
